@@ -6,6 +6,7 @@
 	{% load staticfiles %}
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -20,7 +21,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<img src="../static/img/logo.png" class="nav navbar-nav right" style="padding:0px 5px 0px 5px;">
-				<a href="{% url 'randomVariation:home' %}">Random Variations</a>
+				<a href="{% url 'randomVariation:home' %}" class="navbar-brand">Random Variations</a>
 			</div>
 			<!--Items-->
 			<div class="collapse navbar-collapse" id="topNavBar">
@@ -32,7 +33,7 @@
                         </a>
                     </li>
                     <li class="">
-                        <a href="{% url 'randomVariation:contact' %}">
+                        <a href="#">
                             <span class="glyphicon glyphicon-baby-formula" aria-hidden="true"></span>&nbsp;
                             Random Variation form
                         </a>
@@ -41,7 +42,7 @@
 
                 <ul class="nav navbar-nav navbar-left">
                     <li class="">
-                        <a href="{% url 'randomVariation:rfiView' %}">
+                        <a href="#">
                             <span class="glyphicon glyphicon-baby-formula" aria-hidden="true"></span>&nbsp;
                             Random Variation data
                         </a>
