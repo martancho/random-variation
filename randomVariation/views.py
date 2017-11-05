@@ -34,3 +34,9 @@ class UserFormView(View):
 					return redirect('RFI:home')
 
 		return render(request, self.template_name, {'form':form})
+
+def Home(request):
+	return render(request, 'randomVariation/home.html')
+
+def secondLayer(request):
+	return render(request, 'randomVariation/secondLayer.html')
