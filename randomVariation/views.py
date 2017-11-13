@@ -40,3 +40,6 @@ def Home(request):
 
 def secondLayer(request):
 	return render(request, 'randomVariation/secondLayer.html')
+
+def thirdLayer(request):
+	return render(request, 'randomVariation/thirdLayer.html')
