@@ -25,7 +25,7 @@ SECRET_KEY = 'awpil$na^s23o%c=^-b&x4^i2x+6a0j3p(wvpua6wl+ia+#1=='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'randomvariation.pythonanywhere.com']
 
 
 # Application definition
