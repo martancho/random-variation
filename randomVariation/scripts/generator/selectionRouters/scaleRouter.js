@@ -1,5 +1,5 @@
-const selectionRouter = require('./index');
 const scaleGenerator = require('../noteGenerators/scaleGenerator');
+// add routers here
 
 const scaleRouter = (startMidi, options, selections) => {
   const generatredScale = scaleGenerator(startMidi, options);

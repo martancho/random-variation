@@ -1,5 +1,5 @@
-const selectionRouter = require('./index');
 const sequenceGenerator = require('../noteGenerators/sequenceGenerator');
+const scaleRouter = require('./scaleRouter');
 
 const sequenceRouter = (startMidi, options, selections) => {
   const generatedSequence = sequenceGenerator(options.interval);
@@ -12,9 +12,16 @@ const sequenceRouter = (startMidi, options, selections) => {
   let results = [];
 
   for (let i = 0; i < generatedSequence.length; i++) {
-    results = results.concat(
-      selectionRouter[type](startMidi + generatedSequence[i], value, selections.slice(1))
-    );
+    switch (type) {
+      case 'scale':
+        results = results.concat(
+          scaleRouter(startMidi + generatedSequence[i], value, selections.slice(1));
+        );
+        break;
+
+      default:
+        return generatedSequence;
+    }
   }
 
   return results;
