@@ -15,7 +15,7 @@ const sequenceRouter = (startMidi, options, selections) => {
     switch (type) {
       case 'scale':
         results = results.concat(
-          scaleRouter(startMidi + generatedSequence[i], value, selections.slice(1));
+          scaleRouter(startMidi + generatedSequence[i], value, selections.slice(1))
         );
         break;
 
