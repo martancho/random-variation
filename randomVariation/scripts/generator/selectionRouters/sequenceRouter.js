@@ -5,7 +5,7 @@ const chordRouter = require('./chordRouter');
 const { midiToFlat } = require('../../conversionTables/midiToNoteTables');
 
 const sequenceRouter = (startMidi, options, selections) => {
-  const generatedSequence = sequenceGenerator(startMidi, options.interval);
+  const generatedSequence = sequenceGenerator(startMidi, options);
 
   if (!selections.length) {
     return generatedSequence.map(midiNote => midiToFlat[midiNote]);

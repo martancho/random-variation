@@ -34,12 +34,12 @@ const generate = selections => {
 console.log(
   generate([
     //STARTING NOTE
-    {type: 'single note', value: 'C3'},
+    {type: 'tone row', value: 'C3'},
 
     //SEQUENCE
-    {type: 'sequence', value: {interval: 2, direction: 'ASC'}}, 
+    // {type: 'sequence', value: {interval: 3, direction: 'DESC'}}, 
 
     //SCALE
-    {type: 'chord', value: {name: 'major triad', directions: ['ASC', 'DESC']}},
+    {type: 'chord', value: {name: 'major triad', directions: ['ASC']}},
   ])
 );
