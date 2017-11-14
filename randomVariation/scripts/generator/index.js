@@ -1,4 +1,5 @@
 const singleNoteRouter = require('./selectionRouters/singleNoteRouter');
+const toneRowRouter = require('./selectionRouters/toneRowRouter');
 const noteToMidi = require('../conversionTables/noteToMidi');
 
 // selections is array of object with type and value
@@ -12,7 +13,9 @@ const generate = selections => {
       generatedNotes = singleNoteRouter(startMidi, value, selections.slice(1));
       break;
 
-    // tone row here...
+    case 'tone row':
+      // for now just takes a starting note and generates a random row
+      generatedNotes = toneRowRouter(startMidi, selections.slice(1));
 
     default:
       return generatedNotes;
@@ -31,12 +34,12 @@ const generate = selections => {
 console.log(
   generate([
     //STARTING NOTE
-    {type: 'single note', value: 'C3'},
+    {type: 'tone row', value: 'C3'},
 
     //SEQUENCE
-    {type: 'sequence', value: {interval: 2, direction: 'ASC'}},
+    // {type: 'sequence', value: {interval: 3, direction: 'DESC'}}, 
 
     //SCALE
-    {type: 'scale', value: {name: 'lydian dominant', directions: ['DESC']}},
+    {type: 'chord', value: {name: 'major triad', directions: ['ASC']}},
   ])
 );
