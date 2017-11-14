@@ -1,5 +1,6 @@
 const toneRowGenerator = require('../noteGenerators/toneRowGenerator');
 const scaleRouter = require('./scaleRouter');
+const chordRouter = require('./chordRouter');
 
 
 const toneRowRouter = (startMidi, selections) => {
@@ -17,6 +18,12 @@ const toneRowRouter = (startMidi, selections) => {
       case 'scale':
         results = results.concat(
           scaleRouter(generatedRow[i], value, selections.slice(1))
+        );
+        break;
+
+      case 'chord':
+        results = results.concat(
+          chordRouter(generatedRow[i], value, selections.slice(1))
         );
         break;
 

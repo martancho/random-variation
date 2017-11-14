@@ -1,5 +1,6 @@
 const sequenceGenerator = require('../noteGenerators/sequenceGenerator');
 const scaleRouter = require('./scaleRouter');
+const chordRouter = require('./chordRouter');
 
 const sequenceRouter = (startMidi, options, selections) => {
   const generatedSequence = sequenceGenerator(options.interval);
@@ -16,6 +17,12 @@ const sequenceRouter = (startMidi, options, selections) => {
       case 'scale':
         results = results.concat(
           scaleRouter(startMidi + generatedSequence[i], value, selections.slice(1))
+        );
+        break;
+
+      case 'chord':
+        results = results.concat(
+          chordRouter(startMidi + generatedSequence[i], value, selections.slice(1))
         );
         break;
 

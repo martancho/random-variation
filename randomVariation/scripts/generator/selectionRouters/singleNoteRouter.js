@@ -1,4 +1,5 @@
 const scaleRouter = require('./scaleRouter');
+const chordRouter = require('./chordRouter');
 const sequenceRouter = require('./sequenceRouter');
 
 const singleNoteRouter = (startMidi, note, selections) => {
@@ -11,6 +12,9 @@ const singleNoteRouter = (startMidi, note, selections) => {
   switch (type) {
     case 'scale':
       return scaleRouter(startMidi, value, selections.slice(1));
+
+    case 'chord':
+      return chordRouter(startMidi, value, selections.slice(1));
 
     case 'sequence':
       return sequenceRouter(startMidi, value, selections.slice(1));
