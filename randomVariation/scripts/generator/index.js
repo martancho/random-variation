@@ -73,21 +73,25 @@
 //   }
 // };
 
-const selectionRouter = require('./selectionRouters');
+const singleNoteRouter = require('./selectionRouters/singleNoteRouter');
 const noteToMidi = require('../conversionTables/noteToMidi');
 
 //selections is array of object with type and value
 const generate = selections => {
   let generatedNotes = [];
   const { type, value } = selections[0];
+  const startMidi = noteToMidi[value];
 
-  if (type === 'single note') {
-    const startMidi = noteToMidi[value];
-    generatedNotes = selectionRouter[type](startMidi, value, selections.slice(1));
+  switch (type) {
+    case 'single note':
+      generatedNotes = singleNoteRouter(startMidi, value, selections.slice(1));
+      break;
+
+    // tone row here...
+
+    default:
+      return generatedNotes;
   }
-
-  // tone row here...
-  
 
   //format the generated notes ... have these be seperate functions
   return generatedNotes;
