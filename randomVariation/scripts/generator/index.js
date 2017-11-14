@@ -37,7 +37,7 @@ console.log(
     {type: 'single note', value: 'C3'},
 
     //SEQUENCE
-    {type: 'sequence', value: {interval: 2, direction: 'ASC'}},
+    {type: 'sequence', value: {interval: 2, direction: 'ASC'}}, 
 
     //SCALE
     {type: 'chord', value: {name: 'major triad', directions: ['ASC', 'DESC']}},

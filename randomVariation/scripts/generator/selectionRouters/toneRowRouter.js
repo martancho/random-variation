@@ -2,12 +2,14 @@ const toneRowGenerator = require('../noteGenerators/toneRowGenerator');
 const scaleRouter = require('./scaleRouter');
 const chordRouter = require('./chordRouter');
 
+const { midiToFlat } = require('../../conversionTables/midiToNoteTables');
+
 
 const toneRowRouter = (startMidi, selections) => {
   const generatedRow = toneRowGenerator(startMidi);
 
   if (!selections[0]) {
-    return generatedRow;
+    return generatedRow.map(midiNote => midiToFlat[midiNote]);
   }
 
   const { type, value } = selections[0];
@@ -28,7 +30,7 @@ const toneRowRouter = (startMidi, selections) => {
         break;
 
       default:
-        return generatedRow;
+        return generatedRow.map(midiNote => midiToFlat[midiNote]);
     }
   }
 
