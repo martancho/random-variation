@@ -1,15 +1,23 @@
-const selectionRouter = require('./index.js');
+const scaleRouter = require('./scaleRouter');
+const sequenceRouter = require('./sequenceRouter');
 
 const singleNoteRouter = (startMidi, note, selections) => {
-
   if (!selections.length) {
     return [note];
   }
 
   const { type, value } = selections[0];
-  console.log(selectionRouter);
-  console.log(selectionRouter[type]);
-  return selectionRouter[type](startMidi, value, selections.slice(1));
+
+  switch (type) {
+    case 'scale':
+      return scaleRouter(startMidi, value, selections.slice(1));
+
+    case 'sequence':
+      return sequenceRouter(startMidi, value, selections.slice(1));
+
+    default:
+      return [note];
+  }
 };
 
 module.exports = singleNoteRouter;
