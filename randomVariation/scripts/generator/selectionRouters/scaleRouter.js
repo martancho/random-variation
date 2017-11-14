@@ -8,9 +8,14 @@ const scaleRouter = (startMidi, options, selections) => {
     return generatredScale;
   }
 
-  // will need to run next operation on all scales...
   const { type, value } = selections[0];
-  return selectionRouter[type](startMidi, value, selections.slice(1));
+
+  switch (type) {
+    // add cases here, will need to run next operation on all scales...
+
+    default:
+      return generatredScale;
+  }
 };
 
 module.exports = scaleRouter;
