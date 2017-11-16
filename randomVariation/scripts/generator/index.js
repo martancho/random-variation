@@ -40,6 +40,6 @@ console.log(
     // {type: 'sequence', value: {interval: 3, direction: 'DESC'}}, 
 
     //SCALE
-    {type: 'chord', value: {name: 'major triad', directions: ['ASC']}},
+    {type: 'chord', value: {name: 'Min11', directions: ['ASC', 'DESC']}},
   ])
 );
