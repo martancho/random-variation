@@ -30,16 +30,18 @@ const generate = selections => {
 
 // should have a scale or chord type map to a pitch set for # and b
 
+module.exports = generate;
+
 //TESTS
-console.log(
-  generate([
-    //STARTING NOTE
-    {type: 'tone row', value: 'C3'},
+// console.log(
+//   generate([
+//     //STARTING NOTE
+//     {type: 'tone row', value: 'C3'},
 
-    //SEQUENCE
-    // {type: 'sequence', value: {interval: 3, direction: 'DESC'}}, 
+//     //SEQUENCE
+//     // {type: 'sequence', value: {interval: 3, direction: 'DESC'}}, 
 
-    //SCALE
-    {type: 'chord', value: {name: 'Min11', directions: ['ASC', 'DESC']}},
-  ])
-);
+//     //SCALE
+//     {type: 'chord', value: {name: 'Min11', directions: ['ASC', 'DESC']}},
+//   ])
+// );
