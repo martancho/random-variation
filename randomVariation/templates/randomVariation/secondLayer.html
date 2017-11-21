@@ -1,28 +1,98 @@
 {% extends 'randomVariation/base.html' %}
 {% block content %}
 <div style="text-align:center">
-	<button type="button" class="btn btn-primary" id="btn1">Scales</button>
+	<button type="button" class="btn btn-primary" id="btn1" onclick="displayScales()">Scales</button>
+
+</div>
+<br>
+<div class="row textCenter" id="scalesList" style="display: none">
+
+		<input class="btn btn-warning" type="button" name="scales" value="Major" onclick="getScale('Major')">
+		<input class="btn btn-warning" type="button" name="scales" value="Dorian"  onclick="getScale('Dorian')">
+		<input class="btn btn-warning" type="button" name="scales" value="Phrygian" onclick="getScale('Phrygian')">
+		<input class="btn btn-warning" type="button" name="scales" value="Lydian"  onclick="getScale('Lydian')">
+		<input class="btn btn-warning" type="button" name="scales" value="Mixolydian" onclick="getScale('Mixolydian')">
+		<input class="btn btn-warning" type="button" name="scales" value="Aeloian" onclick="getScale('Aeloian')">
+		<input class="btn btn-warning" type="button" name="scales" value="Locrian"  onclick="getScale('Locrian')">
+		<input class="btn btn-warning" type="button" name="scales" value="Augmented" onclick="getScale('Augmented')">
+		<input class="btn btn-warning" type="button" name="scales" value="Whole tone"  onclick="getScale('Whole tone')">
+		<input class="btn btn-warning" type="button" name="scales" value="Harmonic minor" onclick="getScale('Harmonic minor')">
+		<input class="btn btn-warning" type="button" name="scales" value="Melodic minor ASC"  onclick="getScale('Melodic minor ASC')">
+		<input class="btn btn-warning" type="button" name="scales" value="Melodic minor DESC" onclick="getScale('Melodic minor DESC')">
 
 </div>
 <br>
 <div style="text-align:center">
-	<button type="button" class="btn btn-primary" id="btn2">Sequence</button>
+	<button type="button" class="btn btn-primary" id="btn2" >Sequence</button>
+</div>
+<br>
+<div class="row textCenter" id="sequencesList" style="display: none">
+
+		<input class="btn btn-warning" type="button" name="sequences" value="Major">
+		<input class="btn btn-warning" type="button" name="sequences" value="Dorian">
+		<input class="btn btn-warning" type="button" name="sequences" value="Phrygian">
+		<input class="btn btn-warning" type="button" name="sequences" value="Lydian">
+		<input class="btn btn-warning" type="button" name="sequences" value="Mixolydian">
+		<input class="btn btn-warning" type="button" name="sequences" value="Aeloian">
+		<input class="btn btn-warning" type="button" name="sequences" value="Locrian">
+		<input class="btn btn-warning" type="button" name="sequences" value="Augmented">
+		<input class="btn btn-warning" type="button" name="sequences" value="Whole tone">
+		<input class="btn btn-warning" type="button" name="sequences" value="Harmonic minor">
+		<input class="btn btn-warning" type="button" name="sequences" value="Melodic minor ASC">
+		<input class="btn btn-warning" type="button" name="sequences" value="Melodic minor DESC">
+
 </div>
 <br>
 <div style="text-align:center">
-	<button type="button" class="btn btn-primary" id="btn3">Chords</button>
+	<button type="button" class="btn btn-primary" id="btn3" onclick="displayChords()">Chords</button>
 </div>
+<br>
+<div class="row textCenter" id="chordsList" style="display: none">
+
+		<input class="btn btn-warning" type="button" name="scales" value="Maj" onclick="getChord('Maj')">
+		<input class="btn btn-warning" type="button" name="scales" value="Min"  onclick="getChord('Min')">
+		<input class="btn btn-warning" type="button" name="scales" value="Aug" onclick="getChord('Aug')">
+		<input class="btn btn-warning" type="button" name="scales" value="Dim"  onclick="getChord('Dim')">
+		<input class="btn btn-warning" type="button" name="scales" value="Sus" onclick="getChord('Sus')">
+		<input class="btn btn-warning" type="button" name="scales" value="Maj2" onclick="getChord('Maj2')">
+		<input class="btn btn-warning" type="button" name="scales" value="Min2"  onclick="getChord('Min2')">
+		<input class="btn btn-warning" type="button" name="scales" value="Maj7" onclick="getChord('Maj7')">
+		<input class="btn btn-warning" type="button" name="scales" value="7"  onclick="getChord('7')">
+		<input class="btn btn-warning" type="button" name="scales" value="Min7" onclick="getChord('Min7')">
+		<input class="btn btn-warning" type="button" name="scales" value="Half dim"  onclick="getChord('Half dim')">
+		<input class="btn btn-warning" type="button" name="scales" value="Dim7" onclick="getChord('Dim7')">
+
+</div>
+<br>
 
 <!--JavaScript-->
 <script type="text/javascript">
-	document.getElementById("btn1").onclick = function(){
-		location.href = '../thirdLayer';
+	let secondChoice;
+	const scales = document.getElementById('scalesList');
+	const chords = document.getElementById('chordsList')
+
+	const displayScales = () =>{
+		if(scales.style.display === 'none'){
+			scales.style.display = 'block';
+		}else{
+			scales.style.display = "none";
+		}
 	}
-	document.getElementById("btn2").onclick = function(){
-		location.href = '../thirdLayer';
+	const displayChords = () =>{
+		if(chords.style.display === 'none'){
+			chords.style.display = 'block';
+		}else{
+			chords.style.display = "none";
+		}
 	}
-	document.getElementById("btn3").onclick = function(){
-		location.href = '../thirdLayer';
+
+	const getChord = (chord) => {
+		secondChoice = chord;
+		location.href ='../thirdLayer';
+	}
+	const getScale = (scale) => {
+		secondChoice = scale;
+		location.href ='../thirdLayer';
 	}
 </script>
 {% endblock %}

@@ -1,14 +1,60 @@
 {% extends 'randomVariation/base.html'%}
 {% block content %}
-	<div class = "row">
-		<h3 class="textCenter" style="text-align: center;">Hello User{{user.email}}!</h3>
-	</div>
-	<br>
-	<div style="text-align:center">
-		<a href="{% url 'randomVariation:secondLayer'%}"><button type="button" class="btn btn-primary">Single Note</button></a>
-	</div>
-	<br>
-	<div style="text-align:center">
-		<a href="{% url 'randomVariation:secondLayer'%}"><button type="button" class="btn btn-info">Tone Row</button></a>
-	</div>
+<div class = "row">
+	<h3 class="textCenter">Hello User{{user.email}}!</h3>
+</div>
+<br>
+<div class="textCenter">
+	<button onclick="displayNotes()" type="button" class="btn btn-primary" id="firstChoice">Single Note</button>
+	<br></br>
+</div>
+<div class="row textCenter" id="notesList" style="display: none">
+
+		<input class="btn btn-warning" type="button" name="notes" value="C" data-value="C" onclick="getNote('C')">
+		<input class="btn btn-warning" type="button" name="notes" value="C#" data-value="C#" onclick="getNote('C#')">
+		<input class="btn btn-warning" type="button" name="notes" value="D" data-value="D" onclick="getNote('D')">
+		<input class="btn btn-warning" type="button" name="notes" value="D#" data-value="D#" onclick="getNote('D#')">
+		<input class="btn btn-warning" type="button" name="notes" value="E" data-value="E" onclick="getNote('E')">
+		<input class="btn btn-warning" type="button" name="notes" value="F" data-value="F" onclick="getNote('F')">
+		<input class="btn btn-warning" type="button" name="notes" value="F#" data-value="F#" onclick="getNote('F#')">
+		<input class="btn btn-warning" type="button" name="notes" value="G" data-value="G" onclick="getNote('G')">
+		<input class="btn btn-warning" type="button" name="notes" value="G#" data-value="G#" onclick="getNote('G#')">
+		<input class="btn btn-warning" type="button" name="notes" value="A" data-value="A" onclick="getNote('A')">
+		<input class="btn btn-warning" type="button" name="notes" value="A#" data-value="A#" onclick="getNote('A#')">
+		<input class="btn btn-warning" type="button" name="notes" value="B" data-value="B" onclick="getNote('B')">
+
+</div>
+<br>
+<div class="textCenter">
+	<button onclick="getRow('row')" type="button" class="btn btn-info" id="firstChoice">Tone Row</button>
+</div>
+<br>
+
+<script type="text/javascript">
+
+	let firstChoice;
+	const notes = document.getElementById("notesList");
+
+	const displayNotes = () =>{
+		if(notes.style.display === "none"){
+			notes.style.display = "block";
+		}else{
+			notes.style.display = "none";
+		}
+	}
+
+	const getNote = (note) =>{
+		firstChoice = note;
+		location.href = '../secondLayer';
+		console.log(firstChoice);
+		return firstChoice;
+	}
+
+	const getRow = (row) =>{
+		firstChoice = row;
+		location.href = '../rowSecondLayer';
+		return firstChoice;
+	}
+	//export {firstChoice};
+</script>
 {% endblock %}

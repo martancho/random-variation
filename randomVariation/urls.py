@@ -7,6 +7,7 @@ app_name = 'randomVariation'
 urlpatterns = [
 	url(r'^$', views.Home, name='home'),
 	url(r'^register/$', UserFormView.as_view(), name='register'),
-	url(r'^secondLayer/$', views.secondLayer, name='secondLayer'),	
+	url(r'^secondLayer/$', views.secondLayer, name='secondLayer'),
+	url(r'^rowSecondLayer/$', views.rowSecondLayer, name='rowSecondLayer'),	
 	url(r'^thirdLayer/$', views.thirdLayer, name='thirdLayer'),	
 ]

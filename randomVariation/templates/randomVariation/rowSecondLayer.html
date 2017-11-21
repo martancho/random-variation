@@ -1,10 +1,9 @@
-{% extends "randomVariation/base.html" %}
+{% extends 'randomVariation/base.html' %}
 
 {% block content %}
-<div class="row">
-	<div style="text-align:center">
-		<h4>Add a scale?</h4><button type="button" class="btn btn-primary" onclick="displayScales()">Scale</button>
-	</div>
+<div style="text-align:center">
+	<button type="button" class="btn btn-primary" id="btn1" onclick="displayScales()">Scales</button>
+
 </div>
 <br>
 <div class="row textCenter" id="scalesList" style="display: none">
@@ -24,42 +23,30 @@
 
 </div>
 <br>
-<div class="row">
-	<div style="text-align:center">
-		<h4>Add a chord</h4><button type="button" class="btn btn-primary" id="btn2" onclick="displayChords()">Chord</button>
-	</div>
+<div style="text-align:center">
+	<button type="button" class="btn btn-primary" id="btn2" onclick="displayChords()">Chords</button>
 </div>
 <br>
 <div class="row textCenter" id="chordsList" style="display: none">
 
-	<input class="btn btn-warning" type="button" name="scales" value="Maj" onclick="getChord('Maj')">
-	<input class="btn btn-warning" type="button" name="scales" value="Min"  onclick="getChord('Min')">
-	<input class="btn btn-warning" type="button" name="scales" value="Aug" onclick="getChord('Aug')">
-	<input class="btn btn-warning" type="button" name="scales" value="Dim"  onclick="getChord('Dim')">
-	<input class="btn btn-warning" type="button" name="scales" value="Sus" onclick="getChord('Sus')">
-	<input class="btn btn-warning" type="button" name="scales" value="Maj2" onclick="getChord('Maj2')">
-	<input class="btn btn-warning" type="button" name="scales" value="Min2"  onclick="getChord('Min2')">
-	<input class="btn btn-warning" type="button" name="scales" value="Maj7" onclick="getChord('Maj7')">
-	<input class="btn btn-warning" type="button" name="scales" value="7"  onclick="getChord('7')">
-	<input class="btn btn-warning" type="button" name="scales" value="Min7" onclick="getChord('Min7')">
-	<input class="btn btn-warning" type="button" name="scales" value="Half dim"  onclick="getChord('Half dim')">
-	<input class="btn btn-warning" type="button" name="scales" value="Dim7" onclick="getChord('Dim7')">
+		<input class="btn btn-warning" type="button" name="scales" value="Maj" onclick="getChord('Maj')">
+		<input class="btn btn-warning" type="button" name="scales" value="Min"  onclick="getChord('Min')">
+		<input class="btn btn-warning" type="button" name="scales" value="Aug" onclick="getChord('Aug')">
+		<input class="btn btn-warning" type="button" name="scales" value="Dim"  onclick="getChord('Dim')">
+		<input class="btn btn-warning" type="button" name="scales" value="Sus" onclick="getChord('Sus')">
+		<input class="btn btn-warning" type="button" name="scales" value="Maj2" onclick="getChord('Maj2')">
+		<input class="btn btn-warning" type="button" name="scales" value="Min2"  onclick="getChord('Min2')">
+		<input class="btn btn-warning" type="button" name="scales" value="Maj7" onclick="getChord('Maj7')">
+		<input class="btn btn-warning" type="button" name="scales" value="7"  onclick="getChord('7')">
+		<input class="btn btn-warning" type="button" name="scales" value="Min7" onclick="getChord('Min7')">
+		<input class="btn btn-warning" type="button" name="scales" value="Half dim"  onclick="getChord('Half dim')">
+		<input class="btn btn-warning" type="button" name="scales" value="Dim7" onclick="getChord('Dim7')">
 
 </div>
-<br>
-<div class="row">
-	<div style="text-align:center">
-		<h4>Generate Now!</h4><a href="#Scale"><button type="button" class="btn btn-primary">Generate</button></a>
-	</div>
-</div>
-<br>
-<div class="row" style="text-align:center">
-	<h2>Result</h2><input type="textarea" name="Result">
-</div>
 
-
+<!--JavaScript-->
 <script type="text/javascript">
-	let thirdChoice;
+	let secondChoice;
 	const scales = document.getElementById('scalesList');
 	const chords = document.getElementById('chordsList')
 
@@ -79,13 +66,14 @@
 	}
 
 	const getChord = (chord) => {
-		thirdChoice = chord;
-		location.href ='#';
+		secondChoice = chord;
+		//location.href ='../thirdLayer';
 	}
 	const getScale = (scale) => {
-		thirdChoice = scale;
-		location.href ='#';
+		secondChoice = scale;
+		//location.href ='../thirdLayer';
 	}
+
 </script>
 
-{% endblock %}
+{% endblock%}
