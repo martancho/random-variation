@@ -41,6 +41,13 @@
 		<input class="btn btn-warning" type="button" name="scales" value="Min7" onclick="getChord('Min7')">
 		<input class="btn btn-warning" type="button" name="scales" value="Half dim"  onclick="getChord('Half dim')">
 		<input class="btn btn-warning" type="button" name="scales" value="Dim7" onclick="getChord('Dim7')">
+		<br></br>
+		<p id="choice"></p>
+
+		<br></br>
+		<div style="text-align:center">
+			<button type="button" class="btn btn-primary" id="btn2" onclick="generate()">Generate</button>
+		</div>
 
 </div>
 
@@ -48,7 +55,9 @@
 <script type="text/javascript">
 	let secondChoice;
 	const scales = document.getElementById('scalesList');
-	const chords = document.getElementById('chordsList')
+	const chords = document.getElementById('chordsList');
+	let choice = document.getElementById('choice');
+
 
 	const displayScales = () =>{
 		if(scales.style.display === 'none'){
@@ -67,10 +76,13 @@
 
 	const getChord = (chord) => {
 		secondChoice = chord;
+		document.getElementById("choice").innerHTML = secondChoice;
+		console.log(secondChoice);
 		//location.href ='../thirdLayer';
 	}
 	const getScale = (scale) => {
 		secondChoice = scale;
+		choice.innerHTML = secondChoice;
 		//location.href ='../thirdLayer';
 	}
 
