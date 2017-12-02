@@ -1,5 +1,8 @@
 {% extends 'randomVariation/base.html'%}
 {% block content %}
+<script type="text/javascript" src="../static/js/home.js"></script>
+<script type="text/javascript" src="../static/dist/bundle.js"></script>
+
 <div class = "row">
 	<h3 class="textCenter">Hello User{{user.email}}!</h3>
 </div>
@@ -30,5 +33,16 @@
 </div>
 <br>
 
-<script type="text/javascript" src="../static/js/home.js"></script>
+<div class="textCenter">
+	<button onclick="console.log(
+  generate([
+    //STARTING NOTE
+    {type: 'tone row', value: 'C3'},
+
+    {type: 'chord', value: {name: 'Min11', directions: ['ASC', 'DESC']}},
+  ])
+);" type="button" class="btn btn-info" id="firstChoice">Test Button</button>
+</div>
+
+
 {% endblock %}

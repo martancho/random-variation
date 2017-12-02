@@ -1,0 +1,20 @@
+{
+  "name": "randomvariation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify static/scripts/generator/index.js --s generate > static/dist/bundle.js -d",
+    "watch": "watchify  static/scripts/generator/index.js -o static/dist/bundle.js -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martancho/random-variation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martancho/random-variation/issues"
+  },
+  "homepage": "https://github.com/martancho/random-variation#readme"
+}

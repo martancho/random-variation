@@ -32,6 +32,7 @@ const generate = selections => {
 
 module.exports = generate;
 
+
 //TESTS
 // console.log(
 //   generate([

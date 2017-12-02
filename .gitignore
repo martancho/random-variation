@@ -4,6 +4,7 @@ __pycache__
 rv-env
 db.sqlite3
 /static
+/static/dist/bundle.js
 .DS_Store
 
 # Notes
