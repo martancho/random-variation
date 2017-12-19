@@ -1,6 +1,5 @@
 {% extends 'randomVariation/base.html'%}
 {% block content %}
-<script type="text/javascript" src="../static/js/home.js"></script>
 <script type="text/javascript" src="../static/dist/bundle.js"></script>
 
 <div class = "row">
@@ -13,18 +12,18 @@
 </div>
 <div class="row textCenter" id="notesList" style="display: none">
 
-		<input class="btn btn-warning" type="button" name="notes" value="C" data-value="C" onclick="getNote('C')">
-		<input class="btn btn-warning" type="button" name="notes" value="C#" data-value="C#" onclick="getNote('C#')">
-		<input class="btn btn-warning" type="button" name="notes" value="D" data-value="D" onclick="getNote('D')">
-		<input class="btn btn-warning" type="button" name="notes" value="D#" data-value="D#" onclick="getNote('D#')">
-		<input class="btn btn-warning" type="button" name="notes" value="E" data-value="E" onclick="getNote('E')">
-		<input class="btn btn-warning" type="button" name="notes" value="F" data-value="F" onclick="getNote('F')">
-		<input class="btn btn-warning" type="button" name="notes" value="F#" data-value="F#" onclick="getNote('F#')">
-		<input class="btn btn-warning" type="button" name="notes" value="G" data-value="G" onclick="getNote('G')">
-		<input class="btn btn-warning" type="button" name="notes" value="G#" data-value="G#" onclick="getNote('G#')">
-		<input class="btn btn-warning" type="button" name="notes" value="A" data-value="A" onclick="getNote('A')">
-		<input class="btn btn-warning" type="button" name="notes" value="A#" data-value="A#" onclick="getNote('A#')">
-		<input class="btn btn-warning" type="button" name="notes" value="B" data-value="B" onclick="getNote('B')">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="C"  onclick="getNote({type:'single note', value: {note:'C3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="C#" onclick="getNote({type:'single note', value: {note:'C#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="D"  onclick="getNote({type:'single note', value: {note:'D3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="D#" onclick="getNote({type:'single note', value: {note:'D#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="E"  onclick="getNote({type:'single note', value: {note:'E3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="F"  onclick="getNote({type:'single note', value: {note:'F3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="F#" onclick="getNote({type:'single note', value: {note:'F#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="G"  onclick="getNote({type:'single note', value: {note:'G3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="G#" onclick="getNote({type:'single note', value: {note:'G#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="A"  onclick="getNote({type:'single note', value: {note:'A3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="A#" onclick="getNote({type:'single note', value: {note:'A#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="B"  onclick="getNote({type:'single note', value: {note:'B3'}})">
 
 </div>
 <br>
@@ -33,16 +32,6 @@
 </div>
 <br>
 
-<div class="textCenter">
-	<button onclick="console.log(
-  generate([
-    //STARTING NOTE
-    {type: 'tone row', value: 'C3'},
-
-    {type: 'chord', value: {name: 'Min11', directions: ['ASC', 'DESC']}},
-  ])
-);" type="button" class="btn btn-info" id="firstChoice">Test Button</button>
-</div>
-
+<script type="text/javascript" src="../static/js/home.js"></script>
 
 {% endblock %}

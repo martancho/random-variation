@@ -1,6 +1,8 @@
+	let firstSelection = JSON.parse(localStorage.getItem('choice1'));
 	let secondChoice;
 	const scales = document.getElementById('scalesList');
 	const chords = document.getElementById('chordsList')
+
 
 	const displayScales = () =>{
 		if(scales.style.display === 'none'){
@@ -19,9 +21,11 @@
 
 	const getChord = (chord) => {
 		secondChoice = chord;
+		localStorage.setItem('choice2', JSON.stringify(secondChoice));
 		location.href ='../thirdLayer';
 	}
 	const getScale = (scale) => {
 		secondChoice = scale;
+		localStorage.setItem('choice2', JSON.stringify(secondChoice));
 		location.href ='../thirdLayer';
 	}

@@ -1,5 +1,3 @@
-//import {noteToMidi} from './scripts/conversionTables/noteToMidi.js'
-//const noteToMidi = require('./scripts/conversionTables/noteToMidi');
 let firstChoice;
 const notes = document.getElementById("notesList");
 
@@ -13,13 +11,12 @@ const displayNotes = () =>{
 
 const getNote = (note) =>{
 	firstChoice = note;
+	localStorage.setItem('choice1', JSON.stringify(firstChoice));
 	location.href = '../secondLayer';
-	console.log(firstChoice);
-	return firstChoice;
 }
 
 const getRow = (row) =>{
 	firstChoice = row;
+	localStorage.setItem('choice1', JSON.stringify(firstChoice));
 	location.href = '../rowSecondLayer';
-	return firstChoice;
 }
