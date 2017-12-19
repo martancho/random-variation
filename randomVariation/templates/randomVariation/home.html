@@ -28,9 +28,28 @@
 </div>
 <br>
 <div class="textCenter">
-	<button onclick="getRow('row')" type="button" class="btn btn-info" id="firstChoice">Tone Row</button>
+	<button onclick="displaySeq()" type="button" class="btn btn-info" id="firstChoice">Tone Row</button>
 </div>
 <br>
+<div class="row textCenter" id="toneRow" style="display: none">
+
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="C" onclick="getRow({type:'tone row', value: {note:'C3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="C#" onclick="getRow({type:'tone row', value: {note:'C#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="D" onclick="getRow({type:'tone row', value: {note:'D3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="D#" onclick="getRow({type:'tone row', value: {note:'D#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="E"  onclick="getRow({type:'tone row', value: {note:'E3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="F" onclick="getRow({type:'tone row', value: {note:'F3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="F#" onclick="getRow({type:'tone row', value: {note:'F#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="G" onclick="getRow({type:'tone row', value: {note:'G3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="G#" onclick="getRow({type:'tone row', value: {note:'G#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="A" onclick="getRow({type:'tone row', value: {note:'A3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="A#" onclick="getRow({type:'tone row', value: {note:'A#3'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="B" onclick="getRow({type:'tone row', value: {note:'B3'}})">
+		<br>
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="ASC" onclick="getRow({type:'tone row', value: {direction:'ASC'}})">
+		<input class="btn btn-warning" type="button" style="margin-top:10px" value="DESC" onclick="getRow({type:'tone row', value: {direction:'DESC'}})">
+
+</div>
 
 <script type="text/javascript" src="../static/js/home.js"></script>
 

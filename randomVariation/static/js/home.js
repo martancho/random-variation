@@ -1,11 +1,20 @@
 let firstChoice;
 const notes = document.getElementById("notesList");
+const toneRow = document.getElementById("toneRow")
 
 const displayNotes = () =>{
 	if(notes.style.display === "none"){
 		notes.style.display = "block";
 	}else{
 		notes.style.display = "none";
+	}
+}
+
+const displaySeq = () =>{
+	if(toneRow.style.display === "none"){
+		toneRow.style.display = "block";
+	}else{
+		toneRow.style.display = "none";
 	}
 }
 

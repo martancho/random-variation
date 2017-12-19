@@ -1,9 +1,12 @@
+//const generate = require('../scripts/generator/');
+const scales = document.getElementById('scalesList');
+const chords = document.getElementById('chordsList');
+
 let thirdChoice;
+let thirdSelection; 
 let secondSelection = JSON.parse(localStorage.getItem('choice2'));
 let firstSelection = JSON.parse(localStorage.getItem('choice1'));
 let result = [];
-const scales = document.getElementById('scalesList');
-const chords = document.getElementById('chordsList');
 let displayBox = document.getElementById('output');
 
 const displayScales = () =>{
@@ -24,14 +27,16 @@ const displayChords = () =>{
 
 const getChord = (chord) => {
 	thirdChoice = chord;
-	location.href ='#';
+	localStorage.setItem('choice3', JSON.stringify(thirdChoice));
+	thirdSelection = JSON.parse(localStorage.getItem('choice3'));
 }
 const getScale = (scale) => {
 	thirdChoice = scale;
-	location.href ='#';
+	localStorage.setItem('choice3', JSON.stringify(thirdChoice));
+	thirdSelection = JSON.parse(localStorage.getItem('choice3'));
 }
 
-const generate = () =>{
- result.push(firstSelection, secondSelection);
- displayBox.innerHTML= result[0].type + " " + result[1];
+const create = () =>{
+ result.push(firstSelection, secondSelection, thirdSelection);
+ displayBox.innerHTML= JSON.stringify(result[0]) + " " + JSON.stringify(result[1]) + " " + JSON.stringify(result[2]);
 }

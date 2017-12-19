@@ -1,7 +1,8 @@
 	let firstSelection = JSON.parse(localStorage.getItem('choice1'));
 	let secondChoice;
 	const scales = document.getElementById('scalesList');
-	const chords = document.getElementById('chordsList')
+	const chords = document.getElementById('chordsList');
+	const sequences = document.getElementById('sequenceList');
 
 
 	const displayScales = () =>{
@@ -19,6 +20,14 @@
 		}
 	}
 
+	const displaySeq = () =>{
+		if(sequences.style.display === 'none'){
+			sequences.style.display = 'block';
+		}else{
+			sequences.style.display = "none";
+		}
+	}
+
 	const getChord = (chord) => {
 		secondChoice = chord;
 		localStorage.setItem('choice2', JSON.stringify(secondChoice));
@@ -26,6 +35,11 @@
 	}
 	const getScale = (scale) => {
 		secondChoice = scale;
+		localStorage.setItem('choice2', JSON.stringify(secondChoice));
+		location.href ='../thirdLayer';
+	}
+	const getSeq = (seq) => {
+		secondChoice = seq;
 		localStorage.setItem('choice2', JSON.stringify(secondChoice));
 		location.href ='../thirdLayer';
 	}
