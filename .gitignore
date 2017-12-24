@@ -9,3 +9,6 @@ randomVariation/static/dist/bundle.js
 
 # Notes
 *.notes
+
+# node_modules
+randomVariation/node_modules/
