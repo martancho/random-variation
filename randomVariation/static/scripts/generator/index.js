@@ -6,11 +6,11 @@ const noteToMidi = require('../conversionTables/noteToMidi');
 const generate = selections => {
   let generatedNotes = [];
   const { type, value } = selections[0];
-  const startMidi = noteToMidi[value];
+  const startMidi = noteToMidi[value.note];
 
   switch (type) {
     case 'single note':
-      generatedNotes = singleNoteRouter(startMidi, value, selections.slice(1));
+      generatedNotes = singleNoteRouter(startMidi, value.note, selections.slice(1));
       break;
 
     case 'tone row':
