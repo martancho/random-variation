@@ -1,4 +1,3 @@
-//const generate = require('../scripts/generator/');
 const scales = document.getElementById('scalesList');
 const chords = document.getElementById('chordsList');
 
@@ -37,6 +36,17 @@ const getScale = (scale) => {
 }
 
 const create = () =>{
- result.push(firstSelection, secondSelection, thirdSelection);
- displayBox.innerHTML= JSON.stringify(result[0]) + " " + JSON.stringify(result[1]) + " " + JSON.stringify(result[2]);
+ result.push(firstSelection, secondSelection);
+ for (item of result) {
+ 	for (a in item) {
+ 		console.log(item[a]);
+ 	}
+ }
+
+ let generatedMeasures = window.generate(result);
+ let displayMeasures = generatedMeasures.map(measure => {
+ 	return JSON.stringify(measure) + '<br>';
+ });
+
+ displayBox.innerHTML = displayMeasures
 }
