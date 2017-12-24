@@ -5,7 +5,6 @@ let thirdChoice;
 let thirdSelection; 
 let secondSelection = JSON.parse(localStorage.getItem('choice2'));
 let firstSelection = JSON.parse(localStorage.getItem('choice1'));
-let result = [];
 let displayBox = document.getElementById('output');
 
 const displayScales = () =>{
@@ -35,18 +34,38 @@ const getScale = (scale) => {
 	thirdSelection = JSON.parse(localStorage.getItem('choice3'));
 }
 
+const getChoices = () => {
+	const choices = [];
+
+	let choiceNum = 1;
+	while (true) {
+		const choice = JSON.parse(localStorage.getItem('choice' + choiceNum));
+		if (choice) {
+			choices.push(choice);
+		} else {
+			break;
+		}
+		choiceNum += 1;
+	}
+
+	return choices;
+};
+
 const create = () =>{
- result.push(firstSelection, secondSelection);
- for (item of result) {
- 	for (a in item) {
- 		console.log(item[a]);
- 	}
- }
+	// get return from function that will populate array until nothing in localstorage
+	const choices = getChoices();
 
- let generatedMeasures = window.generate(result);
- let displayMeasures = generatedMeasures.map(measure => {
- 	return JSON.stringify(measure) + '<br>';
- });
+	// log choices
+	for (item of choices) {
+		for (a in item) {
+			console.log(item[a]);
+		}
+	}
 
- displayBox.innerHTML = displayMeasures
+	let generatedMeasures = window.generate(choices);
+	let displayMeasures = generatedMeasures.map(measure => {
+		return JSON.stringify(measure) + '<br>';
+	});
+
+	displayBox.innerHTML = displayMeasures
 }
