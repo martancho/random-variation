@@ -1,6 +1,22 @@
 let firstChoice;
 const notes = document.getElementById("notesList");
-const toneRow = document.getElementById("toneRow")
+const toneRow = document.getElementById("toneRow");
+
+// clear local storage
+const clearStorage = () => {
+	let choiceNum = 1;
+
+	while (true) {
+		const choice = JSON.parse(localStorage.getItem('choice' + choiceNum));
+		if (choice) {
+			localStorage.removeItem('choice' + choiceNum);
+		} else {
+			break;
+		}
+		choiceNum += 1;
+	}
+};
+clearStorage();
 
 const displayNotes = () =>{
 	if(notes.style.display === "none"){

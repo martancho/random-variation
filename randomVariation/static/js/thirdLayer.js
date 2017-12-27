@@ -67,5 +67,5 @@ const create = () =>{
 		return JSON.stringify(measure) + '<br>';
 	});
 
-	displayBox.innerHTML = displayMeasures
+	displayBox.innerHTML = displayMeasures;
 }
