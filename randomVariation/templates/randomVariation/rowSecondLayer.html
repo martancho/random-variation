@@ -41,7 +41,8 @@
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Half dim"  onclick="getChord({type:'chord', value:{name: 'Half dim', directions:['ASC']}})">
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Dim7" onclick="getChord({type:'chord', value:{name: 'Dim7', directions:['ASC']}})">
 	<br></br>
-	<p id="choice"></p>
+</div>
+
 
 	<br></br>
 </div>
@@ -49,8 +50,20 @@
 	<div class="col-lg-6 ">
 		<button type="button" class="btn btn-primary" id="btn3" style="display:none" onclick="create()">Generate</button>
 	</div>
+
+<br></br>
+<div style="text-align:center">
+	<button type="button" class="btn btn-primary" id="btn2" onclick="create()">Generate</button>
+</div>
+
+<br>
+<div class="row" style="text-align:center">
+	<h2>Result</h2>
+	<span id="output"></span>
+
 </div>
 <!--JavaScript-->
+<script type="text/javascript" src="../static/dist/bundle.js"></script>
 <script type="text/javascript" src="../static/js/rowSecondLayer.js"></script>
 
 {% endblock%}

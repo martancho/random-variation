@@ -4,6 +4,7 @@ let secondSelection;
 const scales = document.getElementById('scalesList');
 const chords = document.getElementById('chordsList');
 let choice = document.getElementById('choice');
+let displayBox = document.getElementById('output');
 let result = [];
 const btn3 = document.getElementById('btn3');
 
@@ -38,6 +39,8 @@ const getChord = (chord) => {
 	secondChoice = chord;
 	localStorage.setItem('choice2', JSON.stringify(secondChoice));
 	secondSelection = JSON.parse(localStorage.getItem('choice2'));
+	location.href = '../thirdLayer';
+
 }
 
 const getScale = (scale) => {
@@ -49,4 +52,41 @@ const getScale = (scale) => {
 const create = () =>{
 	let output = result.push(firstSelection, secondSelection);
 	choice.innerHTML = JSON.stringify(result[0]) + " " + JSON.stringify(result[1]);
+	location.href = '../thirdLayer';
+}
+
+const getChoices = () => {
+	const choices = [];
+
+	let choiceNum = 1;
+	while (true) {
+		const choice = JSON.parse(localStorage.getItem('choice' + choiceNum));
+		if (choice) {
+			choices.push(choice);
+		} else {
+			break;
+		}
+		choiceNum += 1;
+	}
+
+	return choices;
+};
+
+const create = () => {
+	// get return from function that will populate array until nothing in localstorage
+	const choices = getChoices();
+
+	// log choices
+	for (item of choices) {
+		for (a in item) {
+			console.log(item[a]);
+		}
+	}
+
+	let generatedMeasures = window.generate(choices);
+	let displayMeasures = generatedMeasures.map(measure => {
+		return JSON.stringify(measure) + '<br>';
+	});
+
+	displayBox.innerHTML = displayMeasures;
 }

@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify static/scripts/generator/index.js --s generate > static/dist/bundle.js -d",
-    "build2": "browserify static/js/thirdLayer.js -o static/dist/bundle.js -d",
-    "watch": "watchify  static/scripts/generator/index.js -o static/dist/bundle.js -d"
+    "build": "browserify static/scripts/generator/index.js --standalone generate > static/dist/bundle.js -d",
+    "watch": "watchify  static/scripts/generator/index.js --standalone generate > static/dist/bundle.js -d"
   },
   "repository": {
     "type": "git",
