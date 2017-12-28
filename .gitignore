@@ -3,7 +3,6 @@
 __pycache__
 rv-env
 db.sqlite3
-randomVariation/static/dist/bundle.js
 .DS_Store
 
 # Notes
