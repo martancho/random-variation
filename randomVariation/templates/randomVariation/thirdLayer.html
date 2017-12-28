@@ -24,6 +24,12 @@
 
 </div>
 <br>
+<div class="row textCenter" style="display:none" id="scaleDirections">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'tone row', value: {direction:'ASC'}})">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'tone row', value: {direction:'DESC'}})">
+</div>
+<br>
+
 <div class="row">
 	<div id="chordSelect" style="text-align:center;display:none">
 		<h4>Add a chord?</h4><button type="button" class="btn btn-primary" id="btn2" onclick="displayChords()">Chord</button>
@@ -45,6 +51,13 @@
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Dim7" onclick="getChord({type:'chord', value:{name: 'Dim7', directions:['ASC']}})">
 </div>
 <br>
+
+<div class="row textCenter" style="display:none" id="chordDirections">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'chord', value: {direction:'ASC'}})">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'chord', value: {direction:'DESC'}})">
+</div>
+<br>
+
 <div class="row">
 	<div style="text-align:center">
 		<h4>Generate Now!</h4><a href="#Scale"><button type="button" class="btn btn-primary" onclick="create()">Generate</button></a>

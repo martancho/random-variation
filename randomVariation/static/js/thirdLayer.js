@@ -1,7 +1,8 @@
 const scales = document.getElementById('scalesList');
 const chords = document.getElementById('chordsList');
-
-let thirdChoice;
+const chordDirections = document.getElementById('chordDirections');
+const scaleDirections = document.getElementById('scaleDirections');
+let thirdChoice, thirdChoiceDir;
 let thirdSelection; 
 let secondSelection = JSON.parse(localStorage.getItem('choice2'));
 let firstSelection = JSON.parse(localStorage.getItem('choice1'));
@@ -34,11 +35,25 @@ const getChord = (chord) => {
 	thirdChoice = chord;
 	localStorage.setItem('choice3', JSON.stringify(thirdChoice));
 	thirdSelection = JSON.parse(localStorage.getItem('choice3'));
+	if(chordDirections.style.display === 'none'){
+		chordDirections.style.display = 'block';
+	}else{
+		chordDirections.style.display = 'none';
+	}
 }
 const getScale = (scale) => {
 	thirdChoice = scale;
 	localStorage.setItem('choice3', JSON.stringify(thirdChoice));
 	thirdSelection = JSON.parse(localStorage.getItem('choice3'));
+	if(scaleDirections.style.display === 'none'){
+		scaleDirections.style.display = 'block';
+	}else{
+		scaleDirections.style.display = 'none';
+	}
+}
+
+const getDirection = (dir) =>{
+	thirdChoiceDir = dir;
 }
 
 const getChoices = () => {
