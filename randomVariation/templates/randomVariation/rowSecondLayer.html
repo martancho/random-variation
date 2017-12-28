@@ -19,6 +19,7 @@
 	<input class="btn btn-warning" type="button"  style="margin-top:10px" value="Harmonic minor" onclick="getScale({type:'scale', value:{name:'Harmonic minor', directions:['ASC','DESC']}})">
 	<input class="btn btn-warning" type="button"  style="margin-top:10px" value="Melodic minor ASC"  onclick="getScale({type:'scale', value:{name:'Melodic minor ASC', directions:['ASC','DESC']}})">
 	<input class="btn btn-warning" type="button"  style="margin-top:10px" value="Melodic minor DESC" onclick="getScale({type:'scale', value:{name:'Melodic minor DESC', directions:['ASC','DESC']}})">
+
 </div>
 <br>
 <div style="text-align:center">
@@ -43,12 +44,12 @@
 	<p id="choice"></p>
 
 	<br></br>
-	<div style="text-align:center">
-		<button type="button" class="btn btn-primary" id="btn2" onclick="generate()">Generate</button>
-	</div>
-
 </div>
-
+<div class="row">
+	<div class="col-lg-6 ">
+		<button type="button" class="btn btn-primary" id="btn3" style="display:none" onclick="create()">Generate</button>
+	</div>
+</div>
 <!--JavaScript-->
 <script type="text/javascript" src="../static/js/rowSecondLayer.js"></script>
 
