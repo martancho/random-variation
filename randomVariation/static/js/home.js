@@ -44,11 +44,7 @@ const getNote = (note) =>{
 const getRow = (row) =>{
 	firstChoice = row;
 	localStorage.setItem('choice1', JSON.stringify(firstChoice));
-	if(directions.style.display === "none"){
-		directions.style.display = 'block';
-	}else{
-		directions.style.display = 'none';
-	}
+	location.href = '../rowSecondLayer';
 }
 
 const getDirection = (dir) =>{

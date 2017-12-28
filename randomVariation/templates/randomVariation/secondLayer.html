@@ -23,8 +23,10 @@
 <br>
 
 <div class="row textCenter" style="display:none" id="scaleDirections">
-	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'tone row', value: {direction:'ASC'}})">
-	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'tone row', value: {direction:'DESC'}})">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'scale', value: {direction:'ASC'}})">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'scale', value: {direction:'DESC'}})">
+	<input class="btn btn-warning" type="button" style="margin-top:10px" value="ASC/DESC" onclick="getDirection({type:'scale', value:{directions:['ASC', 'DESC']}})">
+	<input class="btn btn-warning" type="button" style="margin-top:10px" value="DESC/ASC" onclick="getDirection({type:'scale', value:{directions:['DESC', 'ASC']}})">
 </div>
 <br>
 
@@ -72,6 +74,8 @@
 <div class="row textCenter" style="display:none" id="chordDirections">
 	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'chord', value: {direction:'ASC'}})">
 	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'chord', value: {direction:'DESC'}})">
+	<input class="btn btn-warning" type="button" style="margin-top:10px" value="ASC/DESC" onclick="getDirection({type:'scale', value:{directions:['ASC', 'DESC']}})">
+	<input class="btn btn-warning" type="button" style="margin-top:10px" value="DESC/ASC" onclick="getDirection({type:'scale', value:{directions:['DESC', 'ASC']}})">
 </div>
 <br>
 
