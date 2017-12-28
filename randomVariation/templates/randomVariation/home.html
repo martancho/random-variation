@@ -45,10 +45,11 @@
 		<input class="btn btn-warning" type="button" style="margin-top:10px" value="A" onclick="getRow({type:'tone row', value: {note:'A3'}})">
 		<input class="btn btn-warning" type="button" style="margin-top:10px" value="A#" onclick="getRow({type:'tone row', value: {note:'A#3'}})">
 		<input class="btn btn-warning" type="button" style="margin-top:10px" value="B" onclick="getRow({type:'tone row', value: {note:'B3'}})">
-		<br>
-		<input class="btn btn-warning" type="button" style="margin-top:10px" value="ASC" onclick="getRow({type:'tone row', value: {direction:'ASC'}})">
-		<input class="btn btn-warning" type="button" style="margin-top:10px" value="DESC" onclick="getRow({type:'tone row', value: {direction:'DESC'}})">
+</div>
 
+<div class="row textCenter" id="directions" style="display:none">
+	<input class="btn btn-warning" type="button" style="margin-top:10px" value="ASC" onclick="getDirection({type:'tone row', value: {direction:'ASC'}})">
+	<input class="btn btn-warning" type="button" style="margin-top:10px" value="DESC" onclick="getDirection({type:'tone row', value: {direction:'DESC'}})">
 </div>
 
 <script type="text/javascript" src="../static/js/home.js"></script>

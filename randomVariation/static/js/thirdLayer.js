@@ -7,6 +7,7 @@ let secondSelection = JSON.parse(localStorage.getItem('choice2'));
 let firstSelection = JSON.parse(localStorage.getItem('choice1'));
 let displayBox = document.getElementById('output');
 
+
 // for now only display scale and chord options if sequence was second
 if (secondSelection.type === 'sequence') {
 	document.getElementById('scaleSelect').style.display = 'block';

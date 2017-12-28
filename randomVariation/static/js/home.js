@@ -1,6 +1,7 @@
-let firstChoice;
+let firstChoice, route;
 const notes = document.getElementById("notesList");
 const toneRow = document.getElementById("toneRow");
+const directions = document.getElementById("directions");
 
 // clear local storage
 const clearStorage = () => {
@@ -43,5 +44,14 @@ const getNote = (note) =>{
 const getRow = (row) =>{
 	firstChoice = row;
 	localStorage.setItem('choice1', JSON.stringify(firstChoice));
+	if(directions.style.display === "none"){
+		directions.style.display = 'block';
+	}else{
+		directions.style.display = 'none';
+	}
+}
+
+const getDirection = (dir) =>{
+	route = dir;
 	location.href = '../rowSecondLayer';
 }
