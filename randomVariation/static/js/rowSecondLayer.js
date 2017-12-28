@@ -1,12 +1,12 @@
 let firstSelection = JSON.parse(localStorage.getItem('choice1'));
-let secondChoice;
-let secondSelection;
+let secondChoice, secondChoiceDir;
 const scales = document.getElementById('scalesList');
 const chords = document.getElementById('chordsList');
+const scaleDirections = document.getElementById('scaleDirections');
+const chordDirections = document.getElementById('chordDirections');
 let choice = document.getElementById('choice');
 let displayBox = document.getElementById('output');
 let result = [];
-const btn3 = document.getElementById('btn3');
 
 
 const displayScales = () =>{
@@ -15,43 +15,36 @@ const displayScales = () =>{
 	}else{
 		scales.style.display = "none";
 	}
-	if(btn3.style.display === 'none'){
-		btn3.style.display = 'block';
-	}else{
-		btn3.style.display = "none";
-	}
 }
-
 const displayChords = () =>{
 	if(chords.style.display === 'none'){
 		chords.style.display = 'block';
 	}else{
 		chords.style.display = "none";
 	}
-	if(btn3.style.display === 'none'){
-		btn3.style.display = 'block';
-	}else{
-		btn3.style.display = "none";
-	}
 }
 
 const getChord = (chord) => {
 	secondChoice = chord;
 	localStorage.setItem('choice2', JSON.stringify(secondChoice));
-	secondSelection = JSON.parse(localStorage.getItem('choice2'));
-	location.href = '../thirdLayer';
-
+	if(chordDirections.style.display === 'none'){
+		chordDirections.style.display = 'block';
+	}else{
+		chordDirections.style.display = "none";
+	}
 }
 
 const getScale = (scale) => {
 	secondChoice = scale;
 	localStorage.setItem('choice2', JSON.stringify(secondChoice));
-	secondSelection = JSON.parse(localStorage.getItem('choice2'));
+	if(scaleDirections.style.display === 'none'){
+		scaleDirections.style.display = 'block';
+	}else{
+		scaleDirections.style.display = "none";
+	}
 }
-
-const create = () =>{
-	let output = result.push(firstSelection, secondSelection);
-	choice.innerHTML = JSON.stringify(result[0]) + " " + JSON.stringify(result[1]);
+const getDirection = (dir) => {
+	secondChoiceDir = dir;
 	location.href = '../thirdLayer';
 }
 

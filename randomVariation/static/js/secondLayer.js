@@ -2,6 +2,8 @@ let firstSelection = JSON.parse(localStorage.getItem('choice1'));
 let secondChoice;
 const scales = document.getElementById('scalesList');
 const chords = document.getElementById('chordsList');
+const scaleDirections = document.getElementById('scaleDirections');
+const chordDirections = document.getElementById('chordDirections');
 const sequences = document.getElementById('sequenceList');
 let displayBox = document.getElementById('output');
 
@@ -32,17 +34,29 @@ const displaySeq = () =>{
 const getChord = (chord) => {
 	secondChoice = chord;
 	localStorage.setItem('choice2', JSON.stringify(secondChoice));
-	location.href ='../thirdLayer';
+	if(chordDirections.style.display === 'none'){
+		chordDirections.style.display = 'block';
+	}else{
+		chordDirections.style.display = "none";
+	}
 }
 const getScale = (scale) => {
 	secondChoice = scale;
 	localStorage.setItem('choice2', JSON.stringify(secondChoice));
-	location.href ='../thirdLayer';
+	if(scaleDirections.style.display === 'none'){
+		scaleDirections.style.display = 'block';
+	}else{
+		scaleDirections.style.display = "none";
+	}
 }
 const getSeq = (seq) => {
 	secondChoice = seq;
 	localStorage.setItem('choice2', JSON.stringify(secondChoice));
-	location.href ='../thirdLayer';
+}
+
+const getDirection = (dir) =>{
+	secondChoiceDir = dir;
+	location.href = '../thirdLayer';
 }
 
 const getChoices = () => {

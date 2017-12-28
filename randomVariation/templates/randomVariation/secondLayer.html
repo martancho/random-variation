@@ -20,8 +20,14 @@
 	<input class="btn btn-warning" type="button"  style="margin-top:10px" value="Melodic minor ASC"  onclick="getScale({type:'scale', value:{name:'Melodic minor ASC', directions:['ASC','DESC']}})">
 	<input class="btn btn-warning" type="button"  style="margin-top:10px" value="Melodic minor DESC" onclick="getScale({type:'scale', value:{name:'Melodic minor DESC', directions:['ASC','DESC']}})">
 </div>
-
 <br>
+
+<div class="row textCenter" style="display:none" id="scaleDirections">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'tone row', value: {direction:'ASC'}})">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'tone row', value: {direction:'DESC'}})">
+</div>
+<br>
+
 <div style="text-align:center">
 	<button type="button" class="btn btn-primary" id="sequence" onClick="displaySeq()" >Sequence</button>
 </div>
@@ -36,11 +42,12 @@
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="4x/5°" onClick="getSeq({type:'sequence', value:{interval:6, direction:'ASC'}})">
 
 	<br>
-	<input class="btn btn-warning" type="button" style="margin-top:10px" value="ASC">
-	<input class="btn btn-warning" type="button" style="margin-top:10px" value="DESC">
+	<input class="btn btn-warning" type="button" style="margin-top:10px" value="ASC" onclick="getDirection({type:'sequence', value:{direction:'ASC'}})">
+	<input class="btn btn-warning" type="button" style="margin-top:10px" value="DESC" onclick="getDirection({type:'sequence', value:{direction:'DESC'}})">
 
 </div>
-<br>
+<br><br>
+
 <div style="text-align:center">
 	<button type="button" class="btn btn-primary" id="btn3" onclick="displayChords()">Chords</button>
 </div>
@@ -59,9 +66,15 @@
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Min7" onclick="getChord({type:'chord', value:{name: 'Min7', directions:['ASC']}})">
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Half dim"  onclick="getChord({type:'chord', value:{name: 'Half dim', directions['ASC']}})">
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Dim7" onclick="getChord({type:'chord', value:{name: 'Dim7', directions['ASC']}})">
-
 </div>
 <br>
+
+<div class="row textCenter" style="display:none" id="chordDirections">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'tone row', value: {direction:'ASC'}})">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'tone row', value: {direction:'DESC'}})">
+</div>
+<br>
+
 <div class="row">
 	<div style="text-align:center">
 		<h4>Generate Now!</h4>

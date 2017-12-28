@@ -1,4 +1,4 @@
-let firstChoice, route;
+let firstChoice, firstChoiceDir;
 const notes = document.getElementById("notesList");
 const toneRow = document.getElementById("toneRow");
 const directions = document.getElementById("directions");
@@ -52,6 +52,6 @@ const getRow = (row) =>{
 }
 
 const getDirection = (dir) =>{
-	route = dir;
+	firstChoiceDir = dir;
 	location.href = '../rowSecondLayer';
 }

@@ -2,8 +2,8 @@
 
 {% block content %}
 <div style="text-align:center">
+	<script type="text/javascript" src="../static/dist/bundle.js"></script>
 	<button type="button" class="btn btn-primary" id="btn1" onclick="displayScales()">Scales</button>
-
 </div>
 <br>
 <div class="row textCenter" id="scalesList" style="display: none">
@@ -22,6 +22,13 @@
 
 </div>
 <br>
+
+<div class="row textCenter" style="display:none" id="scaleDirections">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'tone row', value: {direction:'ASC'}})">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'tone row', value: {direction:'DESC'}})">
+</div>
+<br><br>
+
 <div style="text-align:center">
 	<button type="button" class="btn btn-primary" id="btn2" onclick="displayChords()">Chords</button>
 </div>
@@ -40,18 +47,15 @@
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Min7" onclick="getChord({type:'chord', value:{name: 'Min7', directions:['ASC']}})">
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Half dim"  onclick="getChord({type:'chord', value:{name: 'Half dim', directions:['ASC']}})">
 	<input class="btn btn-warning" type="button" style="margin-top:10px" value="Dim7" onclick="getChord({type:'chord', value:{name: 'Dim7', directions:['ASC']}})">
-	<br></br>
+	<br>
 </div>
-
-
-	<br></br>
+<br>
+<div class="row textCenter" style="display:none" id="chordDirections">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="ASC" onclick="getDirection({type:'tone row', value: {direction:'ASC'}})">
+	<input type="button" class="btn btn-warning" style="margin-top:10px" value="DESC" onclick="getDirection({type:'tone row', value: {direction:'DESC'}})">
 </div>
-<div class="row">
-	<div class="col-lg-6 ">
-		<button type="button" class="btn btn-primary" id="btn3" style="display:none" onclick="create()">Generate</button>
-	</div>
+<br><br>
 
-<br></br>
 <div style="text-align:center">
 	<button type="button" class="btn btn-primary" id="btn2" onclick="create()">Generate</button>
 </div>
@@ -63,7 +67,7 @@
 
 </div>
 <!--JavaScript-->
-<script type="text/javascript" src="../static/dist/bundle.js"></script>
+
 <script type="text/javascript" src="../static/js/rowSecondLayer.js"></script>
 
 {% endblock%}
